@@ -45,7 +45,7 @@ namespace SpawnTraffic.AppCmd.Views
             {
                 var workflow = scope.Resolve<ISkaterWorkflow>();
 
-                return workflow.AddSkater(model);
+                return workflow.Add(model);
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using SpawnTraffic.AppCmd.Resources;
 using SpawnTraffic.AppCmd.Views.Interfaces;
 using SpawnTraffic.Workflow.Interfaces;
 
@@ -16,11 +17,16 @@ namespace SpawnTraffic.AppCmd.Views
         public void DisplayMenu()
         {
             var keyIndex = 1;
+
+            var menu = menuWorkflow.GetMenu().Data;
+
             Console.WriteLine();
-            foreach (var item in menuWorkflow.GetMenu().Options)
+
+            foreach (var item in menu.Options)
             {
-                Console.WriteLine($"{keyIndex++} > {item}");
+                Console.WriteLine(ViewResource.MenuOptionItem, keyIndex++, item);
             }
+
             Console.WriteLine();
         }
     }

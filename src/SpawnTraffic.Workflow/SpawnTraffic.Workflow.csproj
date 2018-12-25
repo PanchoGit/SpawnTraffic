@@ -5,15 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SpawnTraffic.DataCache\SpawnTraffic.DataCache.csproj" />
-    <ProjectReference Include="..\SpawnTraffic.Logger\SpawnTraffic.Logger.csproj" />
-    <ProjectReference Include="..\SpawnTraffic.Model\SpawnTraffic.Model.csproj" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:\Users\Spawn\.nuget\packages\newtonsoft.json\9.0.1\lib\netstandard1.0\Newtonsoft.Json.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\SpawnTraffic.DataCache\SpawnTraffic.DataCache.csproj" />
+    <ProjectReference Include="..\SpawnTraffic.Logger\SpawnTraffic.Logger.csproj" />
+    <ProjectReference Include="..\SpawnTraffic.Model\SpawnTraffic.Model.csproj" />
   </ItemGroup>
 
   <ItemGroup>

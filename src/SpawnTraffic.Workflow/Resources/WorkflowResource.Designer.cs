@@ -61,6 +61,24 @@ namespace SpawnTraffic.Workflow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Skater.
+        /// </summary>
+        internal static string MenuAddSkater {
+            get {
+                return ResourceManager.GetString("MenuAddSkater", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to List Skaters.
+        /// </summary>
+        internal static string MenuListSkaters {
+            get {
+                return ResourceManager.GetString("MenuListSkaters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Skater successfully added: {0}.
         /// </summary>
         internal static string SkaterAdded {

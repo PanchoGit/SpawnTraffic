@@ -1,25 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Composition;
-using System.Composition.Hosting;
-using System.IO;
-using System.Linq;
-using System.Runtime.Loader;
+﻿using System.Collections.Generic;
 using SpawnTraffic.Common.Domains;
 using SpawnTraffic.Logger;
+using SpawnTraffic.LoggerManager.Interfaces;
 
 namespace SpawnTraffic.LoggerManager
 {
     public class LoggerManager : ILoggerManager
     {
-        private const string PluginsFolder = "plugins";
+        private IEnumerable<ILogger> Loggers { get; }
 
-        [ImportMany]
-        private IEnumerable<ILogger> Loggers { get; set; }
-
-        public LoggerManager()
+        public LoggerManager(IPluginLoggerManager pluginLoggerManager)
         {
-            RegisterLogger();
+            Loggers = pluginLoggerManager.GetAvailableLoggers();
         }
 
         public Result LogWarn(string message)
@@ -39,8 +31,6 @@ namespace SpawnTraffic.LoggerManager
 
         private Result ProcessLog(string message, MessageType type)
         {
-            RegisterLogger();
-
             var result = new Result();
 
             foreach (var logger in Loggers)
@@ -51,25 +41,6 @@ namespace SpawnTraffic.LoggerManager
             }
 
             return result;
-        }
-
-        private void RegisterLogger()
-        {
-            Loggers = new List<ILogger>();
-
-            var pluginDirectory = $"{AppDomain.CurrentDomain.BaseDirectory}\\{PluginsFolder}";
-
-            var assemblies = Directory
-                .GetFiles(pluginDirectory, "*.dll")
-                .Select(AssemblyLoadContext.Default.LoadFromAssemblyPath);
-
-            var configuration = new ContainerConfiguration()
-                .WithAssemblies(assemblies);
-
-            using (var container = configuration.CreateContainer())
-            {
-                container.SatisfyImports(this);
-            }
         }
     }
 }

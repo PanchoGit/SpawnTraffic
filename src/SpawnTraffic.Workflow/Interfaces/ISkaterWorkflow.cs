@@ -6,7 +6,7 @@ namespace SpawnTraffic.Workflow.Interfaces
 {
     public interface ISkaterWorkflow
     {
-        Result<SkaterModel> AddSkater(AddSkaterModel model);
+        Result<SkaterModel> Add(AddSkaterModel model);
 
         Result<List<SkaterModel>> Get();
     }

@@ -113,5 +113,14 @@ namespace SpawnTraffic.AppCmd.Resources {
                 return ResourceManager.GetString("ListSkaterTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to   {0} &gt; {1}.
+        /// </summary>
+        internal static string MenuOptionItem {
+            get {
+                return ResourceManager.GetString("MenuOptionItem", resourceCulture);
+            }
+        }
     }
 }
