@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="MenuAddSkater" xml:space="preserve">
+    <value>Add Skater</value>
+  </data>
+  <data name="MenuListSkaters" xml:space="preserve">
+    <value>List Skaters</value>
+  </data>
   <data name="SkaterAdded" xml:space="preserve">
     <value>Skater successfully added: {0}</value>
   </data>

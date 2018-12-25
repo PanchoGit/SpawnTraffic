@@ -135,4 +135,7 @@
   <data name="ListSkaterTitle" xml:space="preserve">
     <value>--------&gt;List Skaters&lt;--------</value>
   </data>
+  <data name="MenuOptionItem" xml:space="preserve">
+    <value>  {0} &gt; {1}</value>
+  </data>
 </root>

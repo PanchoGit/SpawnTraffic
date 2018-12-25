@@ -28,6 +28,11 @@ namespace SpawnTraffic.DatabaseLogger
             repository = new LogRepository(new SpawnTrafficContext(dbBuilder.Options));
         }
 
+        public DbLogger(ILogRepository repository)
+        {
+            this.repository = repository;
+        }
+
         public Result Log(string message, MessageType type)
         {
             var result = new Result();

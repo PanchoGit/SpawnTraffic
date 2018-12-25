@@ -41,6 +41,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.Test", "6.Test", "{462447
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnTraffic.UnitTest", "SpawnTraffic.UnitTest\SpawnTraffic.UnitTest.csproj", "{1A1F6A99-F582-4FA6-87BA-EA94A472A2A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnTraffic.IntegrationTest", "SpawnTraffic.IntegrationTest\SpawnTraffic.IntegrationTest.csproj", "{35226F04-97A5-45EC-BF6F-A32B44E24AC9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{1A1F6A99-F582-4FA6-87BA-EA94A472A2A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A1F6A99-F582-4FA6-87BA-EA94A472A2A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A1F6A99-F582-4FA6-87BA-EA94A472A2A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35226F04-97A5-45EC-BF6F-A32B44E24AC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35226F04-97A5-45EC-BF6F-A32B44E24AC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35226F04-97A5-45EC-BF6F-A32B44E24AC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35226F04-97A5-45EC-BF6F-A32B44E24AC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -112,6 +118,7 @@ Global
 		{78337009-5CD2-479A-9D59-7E586C8AEEDE} = {BB5275CC-EEA5-49B1-A156-7373870626B8}
 		{B4F53525-D530-4985-9074-3E1E3BD451FF} = {2BA522B2-D158-47FE-8059-224013C4702C}
 		{1A1F6A99-F582-4FA6-87BA-EA94A472A2A9} = {4624471D-77AB-4013-8C3A-8DEDDF460E8A}
+		{35226F04-97A5-45EC-BF6F-A32B44E24AC9} = {4624471D-77AB-4013-8C3A-8DEDDF460E8A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2F1BC64-8D6D-44E3-820F-4845139DCBDD}

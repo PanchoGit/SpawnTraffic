@@ -1,21 +1,26 @@
 ﻿using System.Collections.Generic;
+using SpawnTraffic.Common.Domains;
 using SpawnTraffic.Model;
 using SpawnTraffic.Workflow.Interfaces;
+using SpawnTraffic.Workflow.Resources;
 
 namespace SpawnTraffic.Workflow
 {
     public class MenuWorkflow : IMenuWorkflow
     {
-        public Menu GetMenu()
+        public Result<Menu> GetMenu()
         {
-            return new Menu
+            var menu = new Menu
             {
                 Options = new List<string>
                 {
-                    "Add Skater",
-                    "List Skaters"
+                    WorkflowResource.MenuAddSkater,
+
+                    WorkflowResource.MenuListSkaters
                 }
             };
+
+            return new Result<Menu>(menu);
         }
     }
 }
