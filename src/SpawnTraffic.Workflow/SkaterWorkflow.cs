@@ -29,7 +29,7 @@ namespace SpawnTraffic.Workflow
             InitSkaterModels();
         }
 
-        public Result<SkaterModel> AddSkater(AddSkaterModel model)
+        public Result<SkaterModel> Add(AddSkaterModel model)
         {
             var result = new Result<SkaterModel>();
 
