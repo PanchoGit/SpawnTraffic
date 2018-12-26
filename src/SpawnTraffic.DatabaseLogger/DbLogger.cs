@@ -14,16 +14,13 @@ namespace SpawnTraffic.DatabaseLogger
     [Export(typeof(ILogger))]
     public class DbLogger : ILogger
     {
-        private const string ConnectionString =
-            "Server=localhost\\SQLExpress;Database=SpawnTraffic;Trusted_Connection=True;MultipleActiveResultSets=true";
-
         private readonly ILogRepository repository;
 
         public DbLogger()
         {
             var dbBuilder = new DbContextOptionsBuilder<SpawnTrafficContext>();
 
-            dbBuilder.UseSqlServer(ConnectionString);
+            dbBuilder.UseSqlServer(LoggerSetting.LogConnectionString);
 
             repository = new LogRepository(new SpawnTrafficContext(dbBuilder.Options));
         }
