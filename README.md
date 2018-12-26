@@ -1,7 +1,9 @@
 # SpawnTraffic
 
 A console application to store skaters, two operations are allowed:
+
 	1. Register a new skater.
+
 	2. Display stored skaters.
 
 Data will be stored on Redis cache.
