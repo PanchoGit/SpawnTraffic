@@ -35,9 +35,7 @@ namespace SpawnTraffic.LoggerManager
 
             foreach (var logger in Loggers)
             {
-                var logResult = logger.Log(message, type);
-
-                result.AddMessages(logResult.Messages);
+                result.AddMessages(logger.Log(message, type));
             }
 
             return result;

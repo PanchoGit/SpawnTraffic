@@ -21,7 +21,7 @@ namespace SpawnTraffic.AppCmd.Views
 
         public void List()
         {
-            Console.WriteLine(ViewResource.AddSkaterTitle);
+            Console.WriteLine(ViewResource.ListSkaterTitle);
 
             var result = Get();
 
@@ -30,7 +30,7 @@ namespace SpawnTraffic.AppCmd.Views
                 Console.WriteLine(ViewResource.ListSkaterResult, item.Id, item.Name, item.Brand);
             }
 
-            Console.WriteLine(ViewResource.AddSkaterTitle + Environment.NewLine);
+            Console.WriteLine(ViewResource.ListSkaterTitle + Environment.NewLine);
 
             MessageDisplayHelper.DisplayMessage(result);
         }

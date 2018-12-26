@@ -8,6 +8,7 @@ using log4net;
 using log4net.Config;
 using Microsoft.Extensions.Configuration;
 using SpawnTraffic.Common.Helpers;
+using SpawnTraffic.Logger;
 using SpawnTraffic.Model.ModelMaps;
 using StackExchange.Redis;
 using Module = Autofac.Module;
@@ -43,13 +44,19 @@ namespace SpawnTraffic.AppCmd.Infrastructures
                 .Where(s => s.Name.EndsWith(WorkflowAssemblyEndName))
                 .AsImplementedInterfaces();
 
+            var loggerSetting = new LoggerSetting();
+
+            Configuration.Bind("Logger", loggerSetting);
+
+            builder.RegisterInstance(loggerSetting);
+
             builder.RegisterType<AppMain>();
 
             RegisterRedisDependencies(builder);
 
             RegisterAutoMapper(builder);
 
-            RegisterLog4Net();
+            RegisterLog4Net(loggerSetting);
         }
 
         private void RegisterRedisDependencies(ContainerBuilder builder)
@@ -85,11 +92,11 @@ namespace SpawnTraffic.AppCmd.Infrastructures
             builder.Register(ctx => ctx.Resolve<MapperConfiguration>().CreateMapper()).As<IMapper>();
         }
 
-        private void RegisterLog4Net()
+        private void RegisterLog4Net(LoggerSetting loggerSetting)
         {
             var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
 
-            XmlConfigurator.Configure(logRepository, new FileInfo(Configuration["log4NetConfig"]));
+            XmlConfigurator.Configure(logRepository, new FileInfo(loggerSetting.Log4NetConfig));
         }
     }
 }
