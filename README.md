@@ -6,8 +6,8 @@ A console application to store skaters, two operations are allowed:
 
 	2. Display stored skaters.
 
-Data will be stored on Redis cache.
-Logs about the correct or fails execution can be registered on SQL Server, files and also can be displayed on screen on command prompt.
+Data will be stored on a Redis cache.
+Logs about success, fails or info execution can be registered on SQL Server, files and also can be displayed on same console app.
 
 ## Requirements
 - Visual Studio 2017 (15.9.4)
@@ -18,10 +18,15 @@ Logs about the correct or fails execution can be registered on SQL Server, files
 ## Database
 
 1. Create Database SpawnTraffic on a SQL Server executing following scripts:
+
 	SpawnTraffic\db\00.Database.sql
+
 		Script will create Database, Login, User and Schema with corresponding grants.
+
 	SpawnTraffic\db\01.App.Tables.sql
+
 		Script will create the Log table.
+
 	All script can be executed multiple times without duplicating objects.
 
 ## Redis Cache
