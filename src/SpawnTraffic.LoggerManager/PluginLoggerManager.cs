@@ -12,7 +12,7 @@ namespace SpawnTraffic.LoggerManager
 {
     public class PluginLoggerManager : IPluginLoggerManager
     {
-        private const string PluginsFolder = "plugins";
+        private const string PluginsFolder = "Plugins";
 
         [ImportMany]
         private IEnumerable<ILogger> AvailableLoggers { get; set; }
@@ -22,6 +22,11 @@ namespace SpawnTraffic.LoggerManager
             AvailableLoggers = new List<ILogger>();
 
             var pluginDirectory = $"{AppDomain.CurrentDomain.BaseDirectory}\\{PluginsFolder}";
+
+            if (!Directory.Exists(pluginDirectory))
+            {
+                Directory.CreateDirectory(pluginDirectory);
+            }
 
             var assemblies = Directory
                 .GetFiles(pluginDirectory, "*.dll")
