@@ -23,15 +23,16 @@ Logs about success, fails or info execution can be registered on SQL Server, fil
 
 	Script will create Database, Login, User and Schema with corresponding grants.
 
-	SpawnTraffic\db\01.App.Tables.sql
+		SpawnTraffic\db\01.App.Tables.sql
 
-		Script will create the Log table.
+	Script will create the Log table.
 
 	All script can be executed multiple times without duplicating objects.
 
 ## Redis Cache
 
 2. Redis settings will take configuration server info from appsetting.json from the SpawnTraffic.AppCmd project (Redis:ConnectionString).
+
 	By default database will be number 2.	
 
 ## Log4net
@@ -62,8 +63,8 @@ Dll files can be copied or deleted in the plugins folder (Plugins) during the ex
 
 - The integration test require to create another Database by using following scripts:
 
-	SpawnTraffic\db\Test\00.Database.sql
+		SpawnTraffic\db\Test\00.Database.sql
 
-	SpawnTraffic\db\Test\01.App.Tables.sql
+		SpawnTraffic\db\Test\01.App.Tables.sql
 
 	Following script will create the a database SpawnTrafficTest and related login and users.
