@@ -41,7 +41,11 @@ Logs about success, fails or info execution can be registered on SQL Server, fil
 
 ## Console application
 
-4. Console application can be deployed with Visual Studio 2017 (15.9.4) by right click on SpawnTraffic.AppCmd and execute Publish.
+4. Console application can be deployed with Visual Studio 2017 (15.9.4) by right click and execute Publish on following project:
+
+		SpawnTraffic.AppCmd 
+
+	(5.UI solution folder)
 
 ## Loggers
 
