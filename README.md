@@ -35,8 +35,6 @@ Logs about the correct or fails execution can be registered on SQL Server, files
 
 4. Console application can be deployed with Visual Studio 2017 (15.9.4) by right click on SpawnTraffic.AppCmd and execute Publish.
 
-Once the publication process was successfully executed we need to create a plugins folder called "plugins".
-
 ## Loggers
 
 5. Available plugins loggers are deployed with the publish process:
@@ -45,7 +43,7 @@ Once the publication process was successfully executed we need to create a plugi
 	- SpawnTraffic.DatabaseLogger.dll
 	- SpawnTraffic.FileLogger.dll
 
-Dll files can be copied or deleted in the plugins folder during the execution of the application.
+Dll files can be copied or deleted in the plugins folder (Plugins) during the execution of the application.
 
 ## Execution
 
@@ -57,4 +55,6 @@ Dll files can be copied or deleted in the plugins folder during the execution of
 - The integration test require to create another Database by using following scripts:
 	SpawnTraffic\db\Test\00.Database.sql
 	SpawnTraffic\db\Test\01.App.Tables.sql
+	Following script will create the a database SpawnTrafficTest and related login and users.
+
 	Following script will create the a database SpawnTrafficTest and related login and users.

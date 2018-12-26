@@ -66,11 +66,19 @@ namespace SpawnTraffic.UnitTest.LoggerManager
 
             Assert.False(resultActual.HasErrors);
 
+            resultActual = sut.LogWarn("MessageOne");
+
+            Assert.False(resultActual.HasErrors);
+
+            resultActual = sut.LogError("MessageOne");
+
+            Assert.False(resultActual.HasErrors);
+
             loggerOneMock.Verify(s => s.Log(It.IsAny<string>(), It.IsAny<MessageType>()),
-                Times.Once);
+                Times.Exactly(3));
 
             loggerTwoMock.Verify(s => s.Log(It.IsAny<string>(), It.IsAny<MessageType>()),
-                Times.Once);
+                Times.Exactly(3));
 
             loggerThreeMock.Verify(s => s.Log(It.IsAny<string>(), It.IsAny<MessageType>()),
                 Times.Never);
