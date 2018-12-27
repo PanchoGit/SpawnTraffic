@@ -14,13 +14,13 @@ namespace SpawnTraffic.LoggerManager
     {
         private readonly string pluginsFolder;
 
+        [ImportMany]
+        private IEnumerable<ILogger> AvailableLoggers { get; set; }
+
         public PluginLoggerManager(LoggerSetting loggerSetting)
         {
             pluginsFolder = loggerSetting.PluginFolder;
         }
-
-        [ImportMany]
-        private IEnumerable<ILogger> AvailableLoggers { get; set; }
 
         public IEnumerable<ILogger> GetAvailableLoggers()
         {
