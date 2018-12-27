@@ -72,3 +72,5 @@ Dll files can be copied or deleted in the plugins folder (Plugins) during the ex
 		SpawnTraffic\db\Test\01.App.Tables.sql
 
 	Following script will create the a database SpawnTrafficTest and related login and users.
+
+	Following script will create the a database SpawnTrafficTest and related login and users.
